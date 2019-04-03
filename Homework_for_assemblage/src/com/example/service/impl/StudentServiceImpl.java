@@ -16,7 +16,7 @@ public  class StudentServiceImpl implements StudentService {
     }
     @Override
     public void addStudent(Student stu){
-       Database.getTpstus().add(stu);
+       Database.getTpstus().add(stu);//通过在database中定义静态方法 get 来获取对于的对象，然后使用对象的add方法 将学生信息传入
     }
     @Override
     public Student getStudent(int sid){

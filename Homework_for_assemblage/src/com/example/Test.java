@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-
         StudentServiceImpl stuService = new StudentServiceImpl();//调用实用类
 
         List<Student> tempstudenlist = stuService.listStudents();//读入学生信息
