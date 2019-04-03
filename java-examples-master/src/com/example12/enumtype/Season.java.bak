@@ -1,0 +1,5 @@
+package com.example12.enumtype;
+
+enum  Season {
+    SPRING, SUMMER, AUTUMN, WINTER
+}
