@@ -100,7 +100,8 @@ public static void main(String[] args) {
                 if(k == i)  //如果找不到相同的，允许存在一次找不到的情况 如果有两次就炸啦
                 {
                     if(n % 2 == 0 || flag == 1)  //impossible的两种情况
-                    {
+                    {//如果找不到相同的 还是偶数个数字 肯定就 成不了回文字
+                        //如果找不到相同的 但是奇数次 可以为中间数字
                         System.out.println("Impossible");
                         return;
                     }
