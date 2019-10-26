@@ -97,7 +97,7 @@ public static void main(String[] args) {
         {
             for(int k = j; k >= i; k--)  //k指针从后面往前一直到i寻找和s[i]相同的s[k]
             {
-                if(k == i)  //如果找不到相同的
+                if(k == i)  //如果找不到相同的，允许存在一次找不到的情况 如果有两次就炸啦
                 {
                     if(n % 2 == 0 || flag == 1)  //impossible的两种情况
                     {
