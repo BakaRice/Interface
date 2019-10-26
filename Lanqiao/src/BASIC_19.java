@@ -106,7 +106,11 @@ public static void main(String[] args) {
                         return;
                     }
                     flag = 1;
-                    cnt += n / 2 - i;
+                    cnt += n / 2 - i;//视为将其移动到中央所需的次数
+                    /*
+                    存在一个问题 如果存在只有一个的奇数字母 他将不能被移动，
+                    因为多个奇数的情况下 其余的一个奇数会被迫的前往最中央的位置的
+                     */
                 }
                 else if(s[k] == s[i])
                 {
