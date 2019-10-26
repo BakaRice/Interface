@@ -80,7 +80,7 @@ public class LeetCode04{
         return 0.0;
     }
 
-
+//视为求最小第k个数字的位置=》如此等效看
     public double findMedianSortedArraysk(int[] nums1, int[] nums2) {
         int n = nums1.length;
         int m = nums2.length;
