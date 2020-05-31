@@ -2,6 +2,7 @@ package Leetcode;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -101,6 +102,7 @@ public class LeetCode146 {
             }
         }
     }
+
     class LRUCache2 extends LinkedHashMap<Integer, Integer> {
         private int capacity;
 
@@ -118,8 +120,9 @@ public class LeetCode146 {
         }
 
         @Override
-        protected boolean removeEldestEntry(Map.Entry<Integer, Integer>eldest){
+        protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
             return super.size() > capacity;
         }
     }
+
 }
