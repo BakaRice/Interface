@@ -9,7 +9,7 @@ import java.util.List;
 public interface ITest {
      static String s = "Yes";
     String s1 = "YES";
-
+//    private String s2 = "s"; private not allowed
     static private void private_simle() {
         System.out.println("private_simle!");
     }
