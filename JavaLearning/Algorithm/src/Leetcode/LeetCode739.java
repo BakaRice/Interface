@@ -7,7 +7,7 @@ import java.util.*;
  * Created by Rice on 2020/6/11 8:51
  * https://leetcode-cn.com/problems/daily-temperatures/
  */
-public class Leetc739 {
+public class LeetCode739 {
     //从后往前遍历
     public int[] dailyTemperatures(int[] T) {
         int length = T.length;
@@ -44,7 +44,7 @@ public class Leetc739 {
     }
 
     public static void main(String[] args) {
-        Leetc739 leetc739 = new Leetc739();
-        leetc739.dailyTemperatures(new int[]{55, 38, 53, 81, 61, 93, 97, 32, 43, 78});
+        LeetCode739 leetCode739 = new LeetCode739();
+        leetCode739.dailyTemperatures(new int[]{55, 38, 53, 81, 61, 93, 97, 32, 43, 78});
     }
 }
