@@ -2,6 +2,7 @@ package Leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class LeetCode15 {
@@ -35,7 +36,7 @@ public class LeetCode15 {
 
     public static void main(String[] args) {
         LeetCode15 leetCode15 = new LeetCode15();
-        int[] nums = {1, -1, -1, 0};
+        int[] nums = {-1, 0, 1, 2, -1, -4};
         System.out.println(leetCode15.threeSum(nums));
     }
 }
