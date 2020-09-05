@@ -13,22 +13,24 @@ import java.util.Map;
 public class T20 {
     public boolean isNumber(String s) {
         Map[] states = {
-                new HashMap<>() {{ put(' ', 0); put('s', 1); put('d', 2); put('.', 4); }}, // 0.
-                new HashMap<>() {{ put('d', 2); put('.', 4); }},                           // 1.
-                new HashMap<>() {{ put('d', 2); put('.', 3); put('e', 5); put(' ', 8); }}, // 2.
-                new HashMap<>() {{ put('d', 3); put('e', 5); put(' ', 8); }},              // 3.
-                new HashMap<>() {{ put('d', 3); }},                                        // 4.
-                new HashMap<>() {{ put('s', 6); put('d', 7); }},                           // 5.
-                new HashMap<>() {{ put('d', 7); }},                                        // 6.
-                new HashMap<>() {{ put('d', 7); put(' ', 8); }},                           // 7.
-                new HashMap<>() {{ put(' ', 8); }}                                         // 8.
+                new HashMap<>() {{ put(' ', 0); put('s', 1); put('d', 2); put('.', 4); }}, // 0. 空格
+                new HashMap<>() {{ put('d', 2); put('.', 4); }},                           // 1. 幂符号钱正负号
+                new HashMap<>() {{ put('d', 2); put('.', 3); put('e', 5); put(' ', 8); }}, // 2. 小数点前数字
+                new HashMap<>() {{ put('d', 3); put('e', 5); put(' ', 8); }},              // 3. 小数点，小数点后数字
+                new HashMap<>() {{ put('d', 3); }},                                        // 4. 当小数点前为空格时，小数点，小数点后的数字
+                new HashMap<>() {{ put('s', 6); put('d', 7); }},                           // 5. 幂符号
+                new HashMap<>() {{ put('d', 7); }},                                        // 6. 幂符号后的正负号
+                new HashMap<>() {{ put('d', 7); put(' ', 8); }},                           // 7. 幂符号后的数字
+                new HashMap<>() {{ put(' ', 8); }}                                         // 8. 结尾的空格
         };
         int p = 0;
         char t;
         for (char c:s.toCharArray()){
-            if (c>='0'&&c<='9') t = 'd';
-            else if (c=='+'||c=='-') t = 's';
-            else t = c;
+            if(c >= '0' && c <= '9') t = 'd';
+            else if(c == '+' || c == '-') t = 's';
+            else if(c == 'e' || c == 'E') t = 'e';
+            else if(c == '.' || c == ' ') t = c;
+            else t = '?';
             if (!states[p].containsKey(t)) return false;
             p = (int) states[p].get(t);
         }

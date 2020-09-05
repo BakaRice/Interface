@@ -20,9 +20,22 @@ public class LeetCode152 {
         return max;
     }
 
+    //2020.9.4
+    //抄2 不是左右指针 是dp 始终都记录下最大以及最小值 因为存在正负号，所以用最小值有可能变成最大值，最大值有可能变最小值
+    public int maxProduct_2(int[] nums) {
+        int maxF = nums[0], minF = nums[0], ans = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            int mx = maxF, mn = minF;
+            maxF = Math.max(mx * nums[i], Math.max(nums[i], mn * nums[i]));
+            minF = Math.min(mn * nums[i], Math.min(nums[i], mx * nums[i]));
+            ans = Math.max(maxF, ans);
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         LeetCode152 leetCode152 = new LeetCode152();
-        int[] nums = {-1,-2,-9,-6};
+        int[] nums = {-1, -2, -9, -6};
         leetCode152.maxProduct(nums);
     }
 }

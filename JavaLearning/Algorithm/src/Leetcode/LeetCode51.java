@@ -39,7 +39,7 @@ public class LeetCode51 {
         for (int col = 0; col < n; col++) {
             if (!isValid(board, row, col)) continue;
             board[row][col] = 'Q';
-            backtrack(row + 1,board);
+            backtrack(row + 1, board);
             board[row][col] = '.';
         }
     }
@@ -48,14 +48,15 @@ public class LeetCode51 {
         int rows = board.length;
         // check is valid in col
         for (char[] chars : board) if (chars[col] == 'Q') return false;
-        // check is valide upright
+        // check is valid upright
         for (int i = row - 1, j = col + 1; i >= 0 && j < rows; i--, j++) {
             if (board[i][j] == 'Q') return false;
         }
-        // check is valide upleft
+        // check is valid upleft
         for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 'Q') return false;
         }
         return true;
     }
+
 }
