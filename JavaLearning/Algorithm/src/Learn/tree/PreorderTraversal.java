@@ -44,4 +44,25 @@ public class PreorderTraversal {
         }
         return ans;
     }
+
+    //非递归写法 2
+    public List<Integer> preorderTraversal_3(TreeNode root) {
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        LinkedList<Integer> ans = new LinkedList<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
+            //迭代访问节点的左孩子，并入栈
+            while (node != null) {
+                ans.addLast(node.val);
+                stack.addLast(node);
+                node = node.left;
+            }
+            //如果节点没有左孩子，则弹出栈顶节点，访问节点右孩子
+            if (!stack.isEmpty()) {
+                node = stack.pollLast();
+                node = node.right;
+            }
+        }
+        return ans;
+    }
 }
